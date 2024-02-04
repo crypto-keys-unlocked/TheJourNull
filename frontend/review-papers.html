@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Papers - TheJourNull</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        #papersList .list-group-item {
+            background-color: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    
+        #papersList .list-group-item h5 {
+            color: #007bff;
+        }
+    
+        #papersList .list-group-item p,
+        #papersList .list-group-item small {
+            color: #333;
+        }
+    </style>    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">TheJourNull</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="browse-journals.html">Browse Journals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publish-papers.html">Publish Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="review-papers.html">Review Papers</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Available Papers for Review</h2>
+        <div id="papersList" class="list-group">
+            <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">Paper Title: Understanding AI</h5>
+                    <p class="mb-1">Domain: Artificial Intelligence</p>
+                    <small>Reward: 100 Tokens, Stake: 20 Tokens, Time Bound: 7 days</small>
+                </div>
+                <button class="btn btn-primary review-btn" data-title="Understanding AI" data-stake="20"
+                    data-reward="100" data-time="7">Review</button>
+            </div>
+            <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">Paper Title: ZKP Basics</h5>
+                    <p class="mb-1">Domain: Cryptography</p>
+                    <small>Reward: 110 Tokens, Stake: 10 Tokens, Time Bound: 8 days</small>
+                </div>
+                <button class="btn btn-primary review-btn" data-title="Understanding AI" data-stake="20"
+                    data-reward="100" data-time="7">Review</button>
+            </div>
+        </div>
+    </div>
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <small>© 2024 TheJourNull. Empowering Research for Everyone.</small>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.review-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const title = this.getAttribute('data-title');
+                    const stake = this.getAttribute('data-stake');
+                    const reward = this.getAttribute('data-reward');
+                    const time = this.getAttribute('data-time');
+                    const reviewMessage = `Title: ${title}\nStake: ${stake} Tokens\nReward: ${reward} Tokens\nTime Left: ${time} days`;
+
+                    alert(reviewMessage);
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
